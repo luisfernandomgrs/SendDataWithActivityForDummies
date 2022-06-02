@@ -19,11 +19,13 @@ public class SecondActivity extends AppCompatActivity {
 
         // get dada from the previous component activity
         Bundle dataActivityPrevious = getIntent().getExtras();
+        // settings values
         String _Name = dataActivityPrevious.getString("Name");
         int _Age = dataActivityPrevious.getInt("Age");
+        User dataUser = (User) dataActivityPrevious.getSerializable("objectData");
 
         // settings values from data recovered...
-        textName.setText(_Name);
+        textName.setText(dataUser.getName());
         textAge.setText(String.valueOf(_Age));
     }
 }

@@ -22,9 +22,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
 
+                // Get a class/object
+                User myUser = new User("Luis Fernando :)", "nosendmail_luis@gmail.com");
+
                 // sending data between activity's
                 intent.putExtra("Name", "Luis Fernando");
                 intent.putExtra("Age", 45);
+                intent.putExtra("objectData", myUser);
 
                 startActivity(intent);
             }
